@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Roshan Leaderboard</title>
+  <link rel="icon" type="image/jpg" href="mango.jpg"/>
+  <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-md p-0 bg-primary fixed-top justify-content-between">
+    <div class="container">
+      <!-- <div class="navbar-toggler bg-transparent" type="button" data-toggle="collapse" data-target="#dv-menu" aria-controls="dv-menu" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon text-white"></span>
+      </div> -->
+      <!-- <div class="btn-group">
+        <button class="btn bg-transparent text-white dv-btn-menu mx-2" id="btn-menu-ranking"><i class="fa fa-trophy btn-selected"></i></button>
+        <button class="btn bg-transparent text-white dv-btn-menu mx-2" id="btn-menu-player"><i class="fa fa-users"></i></button>
+        <button class="btn bg-transparent text-white dv-btn-menu mx-2" id="btn-menu-match"><i class="fa fa-ticket"></i></button>
+        <button class="btn bg-transparent text-white dv-btn-menu mx-2" id="btn-menu-login"><i class="fa fa-key"></i></button>
+        <button class="btn bg-transparent text-white hide dv-btn-menu mx-2" id="btn-menu-admin"><i class="fa fa-key"></i></button>
+        <button class="btn bg-transparent text-white hide dv-btn-menu mx-2" id="btn-menu-signout"><i class="fa fa-arrow-right"></i></button>
+      </div> -->
+      <div class="text-white">
+        <!-- <img class="d-inline-block w-25" src="mango.jpg" alt="Mango"> -->
+        <!-- <div class="d-none d-md-block">Roshan Leaderboard <small class="text-muted">created by Desvelao^^</small></div> -->
+        <div class="ml-2">Roshan Leaderboard <small class="text-muted">by Desvelao^^</small></div>
+      </div>
+      <div class="social_media align-self-center">
+        <a class="fa fa-gamepad text-white mx-2" href="https://discordapp.com/oauth2/authorize?client_id=324833828302749697&scope=bot&permissions=519232" target = "_blank"></a>
+        <!-- <a class="fa fa-twitter text-white mx-2" href="https://twitter.com/fedota2" target = "_blank"></a> -->
+        <a class="fa fa-home text-white mx-2" href="https://discord.gg/SxsYkgX" target = "_blank"></a>
+        <a class="fa fa-user text-white mx-2" href="https://desvelao.github.io/profile/" target = "_blank"></a>
+        <a class="fa fa-twitter text-white mx-2" href="#" target = "_blank"></a>
+        <a class="fa fa-paypal text-white mx-2" href="https://www.patreon.com/desvelao" target = "_blank"></a>
+      </div>
+      <!-- <div class="" id="dv-menu">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><button class="btn bg-transparent white" id="btn-menu-ranking"><i class="fa fa-trophy btn-selected"></i></button></li>
+          <li class="nav-item"><button class="btn bg-transparent white" id="btn-menu-player"><i class="fa fa-users"></i></button></li>
+          <li class="nav-item"><button class="btn bg-transparent white" id="btn-menu-match"><i class="fa fa-ticket"></i></button></li>
+          <li class="nav-item"><button class="btn bg-transparent white" id="btn-menu-login"><i class="fa fa-key"></i></button></li>
+          <li class="nav-item"><button class="btn bg-transparent white hide" id="btn-menu-admin"><i class="fa fa-key"></i></button></li>
+          <li class="nav-item"><button class="btn bg-transparent white hide" id="btn-menu-signout"><i class="fa fa-arrow-right"></i></button></li>
+        </ul>
+        <div class="text-right social_media justify-content-end align-self-center">
+          <a class="fa fa-gamepad white" href="https://discord.gg/K5krgBg" target = "_blank"></a>
+          <a class="fa fa-twitter white" href="https://twitter.com/fedota2" target = "_blank"></a>
+          <a class="fa fa-home white" href="http://www.fedota2.es/" target = "_blank"></a>
+        </div>
+      </div> -->
+    </div>
+  </nav>
+  <div class="dv-separator"></div>
+  <div class="container">
+    <!-- <div class="row mt-3 mb-3">
+      <div class="col-auto col-md-6">
+        <div class="btn-group">
+          <button class="btn bg-transparent white" id="btn-menu-ranking"><i class="fa fa-trophy btn-selected"></i></button>
+          <button class="btn bg-transparent white" id="btn-menu-player"><i class="fa fa-users"></i></button>
+          <button class="btn bg-transparent white" id="btn-menu-match"><i class="fa fa-ticket"></i></button>
+          <button class="btn bg-transparent white" id="btn-menu-login"><i class="fa fa-key"></i></button>
+          <button class="btn bg-transparent white hide" id="btn-menu-admin"><i class="fa fa-key"></i></button>
+          <button class="btn bg-transparent white hide" id="btn-menu-signout"><i class="fa fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <div class="col col-md text-right social_media justify-content-end align-self-center">
+        <a class="fa fa-gamepad white" href="https://discord.gg/K5krgBg" target = "_blank"></a>
+        <a class="fa fa-twitter white" href="https://twitter.com/fedota2" target = "_blank"></a>
+        <a class="fa fa-home white" href="http://www.fedota2.es/" target = "_blank"></a>
+      </div>
+    </div> -->
+    <div class="row justify-content-center">
+      <div class="col col-md-9 col-lg-6 text-center" id="menu-ranking">
+        <h3 class="mb-1 white">Leaderboard</h3>
+        <div class="mb-1 btn-primary d-inline-block p-2 rounded" id="date"></div>
+        <table class="table" id="ranking-tabla">
+          <thead>
+            <th>Rank</th>
+            <!-- <th></th> -->
+            <th>Jugador/a</th>
+            <!-- <th>Puntos</th> -->
+            <th>Medalla</th>
+            <!-- <th>PG</th> -->
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+</html>
