@@ -32,7 +32,7 @@
   function sortByRank(a,b){
     if(a.rank && b.rank){
       if(a.leaderboard && b.leaderboard){
-        let diff = b.leaderboard - a.leaderboard;
+        let diff = a.leaderboard - b.leaderboard;
         return diff !== 0 ? diff : sortByName(a,b)
       }else if(a.leaderboard){
         return -1

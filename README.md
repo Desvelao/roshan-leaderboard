@@ -1,2 +1,2 @@
-# mangoweb
-Página Web de Mango Bot para la LIE
+# Roshan Leaderboard
+Página Web de la Leaderboard del bot de Discord Roshan
